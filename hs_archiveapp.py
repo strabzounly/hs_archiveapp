@@ -74,22 +74,13 @@ class hs_archiveapp:
         self.toolbar.setObjectName(u'hs_archiveapp')
 
         self.commandline = 'D:\\Dropbox\\UN\\UNHABITAT\\HABITAT-SYRIA-OFFICE-Contract.July.August.2023\\ArchiveApp\\Lazarus\\archiveapp.exe' 
-<<<<<<< HEAD
-        self.username='aapadmin'
-        self.password='aapadmin'
-        self.database='habitat_sy_dmgr2'
-        self.appfeature='app.properties'
-        self.appaction='view'
-=======
+
         self.username='<not_set>'
         self.password='<not_set>'
         self.database='<not_set>'
         self.appfeature='<not_set>'
         self.appaction='<not_set>'
 
->>>>>>> 787d341bddf1ad29e25ff95a6f6a40adaf4e0573
-
-    # noinspection PyMethodMayBeStatic
     def tr(self, message):
         """Get the translation for a string using Qt translation API.
 
@@ -200,19 +191,11 @@ class hs_archiveapp:
                 if 'pcode' in field_names:
                     pcode = format( "pcode='{}'", feature['pcode'])
                 if 'czone' in field_names:
-<<<<<<< HEAD
                     czone = format( "czone={}", str(feature['czone']))    
             if czone == '':
                 fltr = czone
             if pcode == '':
                 if fltr == '':
-=======
-                    czone = format( "czone={}", feature['czone'])    
-            if czone == '':
-                fltr = czone
-            if pcode == '':
-                if fltr = '':
->>>>>>> 787d341bddf1ad29e25ff95a6f6a40adaf4e0573
                     fltr = pcode
                 else:
                     fltr = format('({})AND({})', fltr, pcode)
