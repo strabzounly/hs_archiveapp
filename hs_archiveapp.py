@@ -3,7 +3,7 @@
 /***************************************************************************
  hs_archiveapp
                                  A QGIS plugin
- أعمال القانون رقم 33 لعام 2008
+        HABITAT Syria Archive App
                               -------------------
         begin                : 2021-07-16
         git sha              : $Format:%H$
@@ -72,6 +72,13 @@ class hs_archiveapp:
         # TODO: We are going to let the user set this up in a future iteration
         self.toolbar = self.iface.addToolBar(u'hs_archiveapp')
         self.toolbar.setObjectName(u'hs_archiveapp')
+
+        self.commandline = 'D:\\Dropbox\\UN\\UNHABITAT\\HABITAT-SYRIA-OFFICE-Contract.July.August.2023\\ArchiveApp\\Lazarus\\archiveapp.exe' 
+        self.username='aapadmin'
+        self.password='aapadmin'
+        self.database='habitat_sy_dmgr2'
+        self.appfeature='app.properties'
+        self.appaction='view'
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -192,13 +199,13 @@ class hs_archiveapp:
         # show the dialog
         #self.dlg.show()
         # Run the dialog event loop
+
         result=True
         # See if OK was pressed
         if result:
             # Do something useful here - delete the line containing pass and
             # substitute with your code.
-            
-            layerList = QgsMapLayerRegistry.instance().mapLayersByName("Cada")
+            layerList = QgsMapLayerRegistry.instance().mapLayersByName("tgeo_property")
             if layerList is None:
                 return
             if len(layerList) == 0:
@@ -215,10 +222,37 @@ class hs_archiveapp:
             field_names = [
                 field.name()
                 for field in Layer.pendingFields()]
+            fltr=''
+            pcode=''
+            czone=''
             for feature in selected_features:
-                if 'cadanum' in field_names:
-                    cadanum = " cadainfo cadanum=" + feature['cadanum']
+                if 'pcode' in field_names:
+                    pcode = format( "pcode='{}'", feature['pcode'])
+                if 'czone' in field_names:
+                    czone = format( "czone={}", str(feature['czone']))    
+            if czone == '':
+                fltr = czone
+            if pcode == '':
+                if fltr == '':
+                    fltr = pcode
+                else:
+                    fltr = format('({})AND({})', fltr, pcode)
                 
             dirname, filename = os.path.split(os.path.abspath(__file__))
             #os.startfile(os.path.join(dirname,"hs_archiveapp.exe"), cadaid)
-            subprocess.call([os.path.join(dirname,"hs_archiveapp.exe"), cadanum])
+            subprocess.call([
+                self.commandline,
+                self.username,
+                self.password,
+                self.database,
+                self.appfeature,
+                self.appaction,
+                fltr
+            ])
+
+def ErrMessage(message):
+    #Error Message Box
+    msg = QMessageBox()
+    msg.setIcon(QMessageBox.Critical)
+    msg.setText(message)
+    msg.exec_()

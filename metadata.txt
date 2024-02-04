@@ -9,15 +9,15 @@
 [general]
 name=hs_archiveapp
 qgisMinimumVersion=2.0
-description=أعمال القانون رقم 33 لعام 2008
+description=Habitat Syria Archive App
 version=0.1
 author=Souhail Trabzounly
 email=Souhhail@gmail.com
 
 about=Provide a brief description of the plugin and its purpose.
 
-tracker=http://bugs
-repository=http://repo
+tracker=https://github.com/strabzounly/hs_archiveapp/issues
+repository=https://github.com/strabzounly/hs_archiveapp
 # End of mandatory metadata
 
 # Recommended items:
@@ -28,11 +28,11 @@ repository=http://repo
 # Tags are comma separated with spaces allowed
 tags=python
 
-homepage=http://homepage
+homepage=https://github.com/strabzounly/hs_archiveapp
 category=Plugins
 icon=icon.png
 # experimental flag
-experimental=False
+experimental=True
 
 # deprecated flag (applies to the whole plugin, not just a single version)
 deprecated=False
