@@ -74,11 +74,20 @@ class hs_archiveapp:
         self.toolbar.setObjectName(u'hs_archiveapp')
 
         self.commandline = 'D:\\Dropbox\\UN\\UNHABITAT\\HABITAT-SYRIA-OFFICE-Contract.July.August.2023\\ArchiveApp\\Lazarus\\archiveapp.exe' 
+<<<<<<< HEAD
         self.username='aapadmin'
         self.password='aapadmin'
         self.database='habitat_sy_dmgr2'
         self.appfeature='app.properties'
         self.appaction='view'
+=======
+        self.username='<not_set>'
+        self.password='<not_set>'
+        self.database='<not_set>'
+        self.appfeature='<not_set>'
+        self.appaction='<not_set>'
+
+>>>>>>> 787d341bddf1ad29e25ff95a6f6a40adaf4e0573
 
     # noinspection PyMethodMayBeStatic
     def tr(self, message):
@@ -107,44 +116,6 @@ class hs_archiveapp:
         status_tip=None,
         whats_this=None,
         parent=None):
-        """Add a toolbar icon to the toolbar.
-
-        :param icon_path: Path to the icon for this action. Can be a resource
-            path (e.g. ':/plugins/foo/bar.png') or a normal file system path.
-        :type icon_path: str
-
-        :param text: Text that should be shown in menu items for this action.
-        :type text: str
-
-        :param callback: Function to be called when the action is triggered.
-        :type callback: function
-
-        :param enabled_flag: A flag indicating if the action should be enabled
-            by default. Defaults to True.
-        :type enabled_flag: bool
-
-        :param add_to_menu: Flag indicating whether the action should also
-            be added to the menu. Defaults to True.
-        :type add_to_menu: bool
-
-        :param add_to_toolbar: Flag indicating whether the action should also
-            be added to the toolbar. Defaults to True.
-        :type add_to_toolbar: bool
-
-        :param status_tip: Optional text to show in a popup when mouse pointer
-            hovers over the action.
-        :type status_tip: str
-
-        :param parent: Parent widget for the new action. Defaults None.
-        :type parent: QWidget
-
-        :param whats_this: Optional text to show in the status bar when the
-            mouse pointer hovers over the action.
-
-        :returns: The action that was created. Note that the action is also
-            added to self.actions list.
-        :rtype: QAction
-        """
 
         # Create the dialog (after translation) and keep reference
         self.dlg = hs_archiveappDialog()
@@ -229,11 +200,19 @@ class hs_archiveapp:
                 if 'pcode' in field_names:
                     pcode = format( "pcode='{}'", feature['pcode'])
                 if 'czone' in field_names:
+<<<<<<< HEAD
                     czone = format( "czone={}", str(feature['czone']))    
             if czone == '':
                 fltr = czone
             if pcode == '':
                 if fltr == '':
+=======
+                    czone = format( "czone={}", feature['czone'])    
+            if czone == '':
+                fltr = czone
+            if pcode == '':
+                if fltr = '':
+>>>>>>> 787d341bddf1ad29e25ff95a6f6a40adaf4e0573
                     fltr = pcode
                 else:
                     fltr = format('({})AND({})', fltr, pcode)
