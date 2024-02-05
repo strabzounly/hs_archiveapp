@@ -3,7 +3,7 @@
 /***************************************************************************
  hs_archiveappDialog
                                  A QGIS plugin
- أعمال القانون رقم 33 لعام 2008
+ HABITAT Syria Archive App
                              -------------------
         begin                : 2021-07-16
         git sha              : $Format:%H$

@@ -3,8 +3,8 @@
 /***************************************************************************
  hs_archiveapp
                                  A QGIS plugin
- أعمال القانون رقم 33 لعام 2008
-                             -------------------
+HABITAT Syria Archive App                                 
+                              -------------------
         begin                : 2021-07-16
         copyright            : (C) 2021 by Souhail Trabzounly
         email                : Souhhail@gmail.com

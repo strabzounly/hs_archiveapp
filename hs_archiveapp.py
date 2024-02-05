@@ -3,7 +3,7 @@
 /***************************************************************************
  hs_archiveapp
                                  A QGIS plugin
-        HABITAT Syria Archive App
+                            HABITAT Syria Archive App
                               -------------------
         begin                : 2021-07-16
         git sha              : $Format:%H$

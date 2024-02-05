@@ -9,11 +9,7 @@
 [general]
 name=hs_archiveapp
 qgisMinimumVersion=2.0
-<<<<<<< HEAD
-description=Habitat Syria Archive App
-=======
 description=Simple tool helps to run Archive Application and pass parameters
->>>>>>> 787d341bddf1ad29e25ff95a6f6a40adaf4e0573
 version=0.1
 author=Souhail Trabzounly
 email=Souhhail@gmail.com
@@ -32,11 +28,8 @@ repository=https://github.com/strabzounly/hs_archiveapp
 # Tags are comma separated with spaces allowed
 tags=python
 
-<<<<<<< HEAD
-homepage=https://github.com/strabzounly/hs_archiveapp
-=======
+
 homepage=http://www.habitat-sy-apparchive.fast-page.org/
->>>>>>> 787d341bddf1ad29e25ff95a6f6a40adaf4e0573
 category=Plugins
 icon=icon.png
 # experimental flag
